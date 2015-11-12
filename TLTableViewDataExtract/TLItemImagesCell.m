@@ -106,7 +106,7 @@
 {
     if (_addImageView == nil) {
         _addImageView = [[UIButton alloc] init];
-        [_addImageView setImage:[UIImage imageNamed:@"default_add_photo"] forState:UIControlStateNormal];
+        [_addImageView setImage:[UIImage imageNamed:@"add_photo"] forState:UIControlStateNormal];
         [_addImageView addTarget:self action:@selector(addImageButtonDown) forControlEvents:UIControlEventTouchUpInside];
     }
     return _addImageView;

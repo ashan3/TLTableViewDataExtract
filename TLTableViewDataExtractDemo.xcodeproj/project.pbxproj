@@ -45,6 +45,9 @@
 		C2B69DC31C008B1400B83B30 /* TLSubTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B69DC21C008B1400B83B30 /* TLSubTextViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C2B69DC61C008C8E00B83B30 /* TLItemImagesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B69DC51C008C8E00B83B30 /* TLItemImagesCell.m */; settings = {ASSET_TAGS = (); }; };
 		C2B69DC91C008DAF00B83B30 /* TLItemIndustryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B69DC81C008DAF00B83B30 /* TLItemIndustryCell.m */; settings = {ASSET_TAGS = (); }; };
+		C2B69DCF1C00929700B83B30 /* TLDEViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B69DCE1C00929700B83B30 /* TLDEViewController1.m */; settings = {ASSET_TAGS = (); }; };
+		C2B69DD21C0094C600B83B30 /* TLDEViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = C2B69DD11C0094C600B83B30 /* TLDEViewController2.m */; settings = {ASSET_TAGS = (); }; };
+		C2B69DD51C0095F500B83B30 /* add_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2B69DD41C0095F500B83B30 /* add_photo@2x.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +126,11 @@
 		C2B69DC51C008C8E00B83B30 /* TLItemImagesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLItemImagesCell.m; sourceTree = "<group>"; };
 		C2B69DC71C008DAF00B83B30 /* TLItemIndustryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLItemIndustryCell.h; sourceTree = "<group>"; };
 		C2B69DC81C008DAF00B83B30 /* TLItemIndustryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLItemIndustryCell.m; sourceTree = "<group>"; };
+		C2B69DCD1C00929700B83B30 /* TLDEViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDEViewController1.h; sourceTree = "<group>"; };
+		C2B69DCE1C00929700B83B30 /* TLDEViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDEViewController1.m; sourceTree = "<group>"; };
+		C2B69DD01C0094C600B83B30 /* TLDEViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDEViewController2.h; sourceTree = "<group>"; };
+		C2B69DD11C0094C600B83B30 /* TLDEViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDEViewController2.m; sourceTree = "<group>"; };
+		C2B69DD41C0095F500B83B30 /* add_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_photo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,10 @@
 				C2B69D441C00702000B83B30 /* AppDelegate.m */,
 				C2B69DBE1C007F6D00B83B30 /* TLTestViewController.h */,
 				C2B69DBF1C007F6D00B83B30 /* TLTestViewController.m */,
+				C2B69DCD1C00929700B83B30 /* TLDEViewController1.h */,
+				C2B69DCE1C00929700B83B30 /* TLDEViewController1.m */,
+				C2B69DD01C0094C600B83B30 /* TLDEViewController2.h */,
+				C2B69DD11C0094C600B83B30 /* TLDEViewController2.m */,
 				C2B69D401C00702000B83B30 /* Supporting Files */,
 			);
 			path = TLTableViewDataExtractDemo;
@@ -203,6 +215,7 @@
 		C2B69D5C1C0074BF00B83B30 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				C2B69DD31C0095E500B83B30 /* Images */,
 				C2B69DB41C007D0800B83B30 /* Categorys */,
 				C2B69DB31C007D0000B83B30 /* ThirdParts */,
 			);
@@ -344,6 +357,14 @@
 			name = Categorys;
 			sourceTree = "<group>";
 		};
+		C2B69DD31C0095E500B83B30 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				C2B69DD41C0095F500B83B30 /* add_photo@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		EF4A9E19E56215CBE6A77B9E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -414,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B69D941C00788000B83B30 /* DNImagePicker.strings in Resources */,
+				C2B69DD51C0095F500B83B30 /* add_photo@2x.png in Resources */,
 				C2B69D501C00702000B83B30 /* LaunchScreen.storyboard in Resources */,
 				C2B69D4D1C00702000B83B30 /* Assets.xcassets in Resources */,
 				C2B69D991C00788000B83B30 /* imageResources.xcassets in Resources */,
@@ -463,6 +485,7 @@
 			files = (
 				C2B69DC91C008DAF00B83B30 /* TLItemIndustryCell.m in Sources */,
 				C2B69DBD1C007D3800B83B30 /* NSDate+Extension.m in Sources */,
+				C2B69DD21C0094C600B83B30 /* TLDEViewController2.m in Sources */,
 				C2B69D8F1C00788000B83B30 /* DNAsset.m in Sources */,
 				C2B69DB71C007D2300B83B30 /* UIView+WB.m in Sources */,
 				C2B69DC61C008C8E00B83B30 /* TLItemImagesCell.m in Sources */,
@@ -482,6 +505,7 @@
 				C2B69D9C1C00788000B83B30 /* DNBrowserCell.m in Sources */,
 				C2B69D981C00788000B83B30 /* UIViewController+DNImagePicker.m in Sources */,
 				C2B69D631C0076C900B83B30 /* TLTableViewCell.m in Sources */,
+				C2B69DCF1C00929700B83B30 /* TLDEViewController1.m in Sources */,
 				C2B69D421C00702000B83B30 /* main.m in Sources */,
 				C2B69D9A1C00788000B83B30 /* DNAssetsViewCell.m in Sources */,
 				C2B69D5B1C0070EC00B83B30 /* TLDEBaseTableViewController.m in Sources */,

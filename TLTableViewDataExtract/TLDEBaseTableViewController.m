@@ -160,11 +160,11 @@
 }
 
 #pragma mark - TLItemImagesCellDelegate
-- (void) reImageItemCell:(TLItem *)item didSelecteImageIndex:(NSInteger)index
+- (void) imageItemCell:(TLItem *)item didSelecteImageIndex:(NSInteger)index
 {
 }
 
-- (void) reImageItemCellAddImageButtonDown:(TLItem *)item
+- (void) imageItemCellAddImageButtonDown:(TLItem *)item
 {
     self.imagePicker.userInfo = item;
     [self presentViewController:self.imagePicker animated:YES completion:nil];
@@ -173,8 +173,8 @@
 #pragma mark - TLSubTextVCDelegate
 - (void) subTextViewController:(TLSubTextViewController *)subTextVC didEnterText:(NSString *)text
 {
-    TLItem *TLItem = subTextVC.userInfo;
-    TLItem.placeholder = text;
+    TLItem *tlItem = subTextVC.userInfo;
+    tlItem.placeholder = text;
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -192,6 +192,14 @@
     for (DNAsset *dAsset in imageAssets) {
         [[[ALAssetsLibrary alloc] init] assetForURL:dAsset.url
                                         resultBlock:^(ALAsset *asset) {
+                                            NSError *error = nil;
+                                            if (![[NSFileManager defaultManager] isExecutableFileAtPath:PATH_IMAGES]) {
+                                                [[NSFileManager defaultManager] createDirectoryAtPath:PATH_IMAGES withIntermediateDirectories:YES attributes:nil error:&error];
+                                                if (error) {
+                                                    NSLog(@"%@", error);
+                                                }
+                                            }
+                                            
                                             UIImage *image = [UIImage imageWithCGImage:[[asset defaultRepresentation] fullScreenImage]];
                                             NSString *imageName = [NSString stringWithFormat:@"%lf", [[NSDate date]timeIntervalSince1970]];
                                             NSString *imagePath = [NSString stringWithFormat:@"%@/%@", PATH_IMAGES, imageName];
@@ -216,16 +224,17 @@
 #pragma mark - TLDataPickerControllerDelegate
 - (void) dataPickerController:(TLDataPickerController *)dataPickerController didSelectItem:(id)item
 {
-    TLItem *TLItem = dataPickerController.userInfo;
-    TLItem.placeholder = item;
+    TLItem *tlItem = dataPickerController.userInfo;
+    tlItem.placeholder = item;
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) dataPickerController:(TLDataPickerController *)dataPickerController didSelectItems:(NSArray *)items
 {
-    TLItem *TLItem = dataPickerController.userInfo;
-    TLItem.selectedItems = items;
+    TLItem *tlItem = dataPickerController.userInfo;
+    tlItem.selectedItems = items;
+    [self.dic setValue:items forKey:tlItem.key];
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -233,8 +242,8 @@
 #pragma mark - TLDatePickerControllerDelegate
 - (void) datePickerViewController:(TLDatePickerController *)datePickerViewController didSelectedDate:(id)date
 {
-    TLItem *TLItem = datePickerViewController.userInfo;
-    TLItem.placeholder = [NSString stringWithFormat:@"%@", TLItem.type == TLItemTypeDate ? [date formatYMD] : [date formatYMDHM]];
+    TLItem *tlItem = datePickerViewController.userInfo;
+    tlItem.placeholder = [NSString stringWithFormat:@"%@", tlItem.type == TLItemTypeDate ? [date formatYMD] : [date formatYMDHM]];
     [self.tableView reloadData];
     [self.navigationController popViewControllerAnimated:YES];
 }
