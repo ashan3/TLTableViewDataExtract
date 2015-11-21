@@ -135,10 +135,18 @@ static UILabel *hLabel = nil;
             [self.titleLabel setHidden:YES];
             break;
         case TLItemTypeMutiTextWithoutTitle:
+        {
             [self.textView setHidden:NO];
-            self.rac_reSignal = self.textView.rac_textSignal;
+            if (item.title != nil) {
+                [self.textView setText:item.title];
+                [self.textView setTextColor:[UIColor blackColor]];
+            }
+            [self.textView.rac_textSignal subscribeNext:^(id x) {
+                item.title = x;
+            }];
             [self.titleLabel setHidden:YES];
             break;
+        }
         default:
             break;
     }
